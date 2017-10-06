@@ -9,9 +9,9 @@
 
 1. Move your Wordpress files with the exception of `index.php` and `wp-content` into a sub-directory named `wp`.
 2. Download and put the following files present in this repository along with `index.php`:
-  - `wp-config.php`
-  - `composer.json`
-  - `composer.lock`
+    - `wp-config.php`
+    - `composer.json`
+    - `composer.lock`
 3. Make sure `wp-config.php` isn't being ignored. i.e. remove it from `.gitignore`.
 4. Add the `wp` directory to your `.gitignore` and make sure `wp-content/uploads` and `wp-content/plugins` are there too.
 5. Commit everything.
@@ -20,9 +20,9 @@
 
 1. Make sure you have support for `dokku storage` and the plugin for MariaDB installed.
 2. Create a new application and mount two storage points:
-  - `wp-content/plugins`
-  - `wp-content/uploads`
-  - `wp`
+    - `wp-content/plugins`
+    - `wp-content/uploads`
+    - `wp`
 3. Create and link a new database instance.
 4. Deploy and profit.
 
