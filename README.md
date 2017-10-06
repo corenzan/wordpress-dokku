@@ -14,13 +14,13 @@
     - `composer.json`
     - `composer.lock`
 3. Make sure `wp-config.php` isn't being ignored. i.e. remove it from `.gitignore`.
-4. Add the `wp` directory to your `.gitignore` and make sure `wp-content/uploads` and `wp-content/plugins` are there too.
+4. Add the `wp` directory to your `.gitignore` and make sure `wp-content/uploads` and `wp-content/plugins` are being ignored too.
 5. Commit everything.
 
 ### For the system administrator
 
 1. Make sure you have support for `dokku storage` and the plugin for MariaDB installed.
-2. Create a new application and mount two storage points:
+2. Create a new application and mount three storage points:
     - `/var/lib/dokku/data/storage/<application>/plugins:wp-content/plugins`
     - `/var/lib/dokku/data/storage/<application>/uploads:wp-content/uploads`
     - `/var/lib/dokku/data/storage/<application>/wp:wp`
@@ -28,7 +28,7 @@
 4. Move `nginx.conf.d/wordpress.conf` to `/home/dokku/<application>/nginx.conf.d/wordpress.conf` and restart nginx.
 5. Deploy and profit.
 
-Also you should set the following environment variables:
+You should set the following environment variables:
 
 - `WP_AUTH_KEY`
 - `WP_SECURE_AUTH_KEY`
@@ -39,7 +39,7 @@ Also you should set the following environment variables:
 - `WP_LOGGED_IN_SALT`
 - `WP_NONCE_SALT`
 
-The database connection info is parsed from the `DATABASE_URL` set by the database plugin, so you don't have to worry. Optionally you can set `WP_DEBUG` to `true`.
+The database connection info is parsed from the `DATABASE_URL` set by the database plugin, so you don't have to worry. Optionally you can also set `WP_DEBUG` to `true`.
 
 ## Important
 
