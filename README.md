@@ -7,16 +7,18 @@
 
 ### For the Wordpress developer
 
-1. Move your Wordpress files with the exception of `index.php` and `wp-content` into a sub-directory named `wp`.
-2. Download and put the following files present in this repository along with `index.php`:
+1. Delete everything from your Wordpress installation with the exception of `wp-content`.
+2. Download and put the following files present in this repository along with `wp-content`:
     - `.user.ini`
     - `index.php`
     - `wp-config.php`
     - `composer.json`
     - `composer.lock`
-3. Make sure `wp-config.php` isn't being ignored. i.e. remove it from `.gitignore`.
-4. Add the `wp` directory to your `.gitignore` and make sure `wp-content/uploads` and `wp-content/plugins` are being ignored too.
-5. Commit everything.
+3. Remove `wp-config.php` from your `.gitignore` and also add these lines:
+    - `wordpress/`
+    - `vendor/`
+    - `wp-content/plugins/`
+4. Commit everything.
 
 ### For the system administrator
 
