@@ -1,7 +1,10 @@
 {
   "require": {
-    "php": ">= 7.1", 
-    "ext-gd": "*"
+    "php": ">=7.1",
+    "ext-gd": "*",
+    "johnpbloch/wordpress": ">=4.8"
+  },
+  "extra": {
+    "wordpress-install-dir": "wp"
   }
 }
-
