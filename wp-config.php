@@ -81,6 +81,11 @@ $table_prefix  = 'wp_';
  */
 define('WP_DEBUG', (bool)getenv('WP_DEBUG'));
 
+// Update wp-content path.
+// https://codex.wordpress.org/Editing_wp-config.php#Moving_wp-content_folder
+define( 'WP_CONTENT_DIR', dirname(__FILE__) . '/wp-content' );
+define( 'WP_CONTENT_URL', '//' . $_SERVER['HTTP_HOST'] . '/wp-content' );
+
 // If we're behind a proxy server and using HTTPS, we need to alert Wordpress of that fact
 // see also http://codex.wordpress.org/Administration_Over_SSL#Using_a_Reverse_Proxy
 if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
