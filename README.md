@@ -9,6 +9,7 @@
 
 1. Remove (`git rm --cached`) everything from your Wordpress installation with the exception of `wp-content`.
 2. Download and put the following files present in this repository along with `wp-content`:
+    - `.htaccess`
     - `.user.ini`
     - `index.php`
     - `wp-config.php`
