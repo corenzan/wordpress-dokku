@@ -15,14 +15,19 @@
     - `wp-config.php`
     - `composer.json`
     - `composer.lock`
-3. Remove `wp-config.php` and `.htaccess` from your `.gitignore` and add these lines:
+3. Add these lines to your `.gitignore`:
     ```
     wordpress/
     vendor/
-    wp-content/plugins/*
-    wp-content/uploads/*
-    !wp-content/plugins/index.php
-    !wp-content/uploads/index.php
+    wp-content/plugins/
+    wp-content/uploads/
+    ```
+
+    And remove these:
+
+    ```
+    wp-config.php
+    .htaccess
     ```
 4. Commit everything.
 
