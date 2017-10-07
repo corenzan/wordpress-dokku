@@ -7,7 +7,7 @@
 
 ### For the Wordpress developer
 
-1. Remove (`git rm --cached`) everything from your Wordpress installation with the exception of `wp-content`.
+1. Remove everything from your Wordpress installation with the exception of `wp-content`.
 2. Download and put the following files present in this repository along with `wp-content`:
     - `.htaccess`
     - `.user.ini`
@@ -54,7 +54,7 @@ The database connection info is parsed from the `DATABASE_URL` set by the databa
 Please note that there are some considerations in this setup:
 
 - Plugins are managed by Wordpress and not added to your repository.
-- The Wordpress installation is managed by Composer and not added to your repository.
+- The Wordpress installation is managed by Composer and not added to your repository. The version is set in `composer.json` (remember to also update `composer.lock`).
 - You can't have plugins that write outside `wp-content/plugins` and `wp-content/uploads` since anything except these mount points will be erased on each deploy.
 - Whenever you need to sync your development environment use a migration plugin to get a dump of the database as well as the uploaded assets.
 
