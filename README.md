@@ -1,5 +1,9 @@
-# Wordpress on Dokku
+# Wordpress on Docker with Dokku
 
+## Requirements
+
+- [Git](https://git-scm.com/)
+- [Composer](https://getcomposer.org/)
 - [Wordpress](http://wordpress.org)
 - [Dokku](http://dokku.viewdocs.io/dokku)
 
@@ -61,6 +65,7 @@ Please note that there are some considerations in this setup:
 - Plugins are managed by Wordpress and not added to your repository.
 - The Wordpress installation is managed by Composer and not added to your repository. The version is set in `composer.json` (remember to also update `composer.lock`).
 - You can't have plugins that write outside `wp-content/plugins` and `wp-content/uploads` since anything except these mount points will be erased on each deploy.
+- You'll need to install Wordpress on your development machine using Composer, and use something other than Apache to serve since `.htaccess` is suited only for production.
 - Whenever you need to sync your development environment use a migration plugin to get a dump of the database as well as the uploaded assets.
 
 ## References
