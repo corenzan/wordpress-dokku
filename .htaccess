@@ -2,6 +2,8 @@
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !^/wordpress/
-RewriteRule ^(.*)$ /wordpress/$1 [L]
+RewriteRule ^(.*)$ wordpress/$1
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* /wordpress/index.php
 </IfModule>
