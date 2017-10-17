@@ -19,21 +19,15 @@
     - `wp-config.php`
     - `composer.json`
     - `composer.lock`
-3. Add these lines to your `.gitignore`:
-    ```
-    wordpress/
-    vendor/
-    wp-content/plugins/
-    wp-content/uploads/
-    ```
-
-    And remove these:
-
-    ```
-    wp-config.php
-    .htaccess
-    ```
-4. Commit everything.
+3. Make sure your `.gitignore` include these lines:
+    - `vendor/`
+    - `wordpress/`
+    - `wp-content/plugins/`
+    - `wp-content/uploads/`
+4. But **not** these:
+    - `wp-config.php`
+    - `.htaccess`
+5. Commit everything.
 
 ### For the system administrator
 
@@ -65,7 +59,6 @@ Please note that there are some considerations in this setup:
 - Plugins are managed by Wordpress and not added to your repository.
 - The Wordpress installation is managed by Composer and not added to your repository. The version is set in `composer.json` (remember to also update `composer.lock`).
 - You can't have plugins that write outside `wp-content/plugins` and `wp-content/uploads` since anything except these mount points will be erased on each deploy.
-- You'll need to install Wordpress on your development machine using Composer, and use something other than Apache to serve since `.htaccess` is suited only for production.
 - Whenever you need to sync your development environment use a migration plugin to get a dump of the database as well as the uploaded assets.
 
 ## References
